@@ -1,0 +1,3 @@
+stick/Shutdown Stick.sup
+stick/Reboot Stick.sup
+stick/Change Skin.sup
