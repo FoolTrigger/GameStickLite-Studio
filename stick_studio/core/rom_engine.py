@@ -271,7 +271,7 @@ class RomManager:
             cur.execute("CREATE TABLE tbl_tw(en_id INTEGER, en_title CHAR(50));")
             cur.execute("CREATE TABLE tbl_match(ID INTEGER, zh_match CHAR(50));")
             cur.execute(
-                "CREATE TABLE tbl_game(gameid INTEGER, game CHAR(50), suffix CHAR(5), "
+                "CREATE TABLE tbl_game(gameid INTEGER, game TEXT, suffix CHAR(5), "
                 "zh_id INTEGER, en_id INTEGER, ko_id INTEGER, video_id INTEGER, "
                 "class_type INTEGER, game_type INTEGER, hard INTEGER, timer CHAR(50));"
             )
@@ -294,7 +294,7 @@ class RomManager:
 
                 cur.execute(
                     "INSERT INTO tbl_game VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?);",
-                    (idx, item.base_name[:50], item.ext.lower()[:5], idx, idx, idx, idx, p_info["class_type"], p_info["default_game_type"], p_info["timer"])
+                    (idx, item.base_name, item.ext.lower()[:5], idx, idx, idx, idx, p_info["class_type"], p_info["default_game_type"], p_info["timer"])
                 )
 
             conn.commit()
